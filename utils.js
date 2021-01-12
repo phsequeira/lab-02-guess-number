@@ -1,23 +1,34 @@
 const result = document.getElementById('result');
 const wonString = document.getElementById('won');
 const lossString = document.getElementById('loss');
+const triesSpan = document.getElementById('tries');
 
 let winNumber = 0;
 let lostNumber = 0;
+let tries = 4;
+export function startGame(guess, randomNumber) {
+    const numbCheckResult = numberChecker(guess.value, randomNumber);
+    results(numbCheckResult);
+    --tries;
+    triesSpan.textContent = tries;
+    tryAttempt(tries);
+    if (numbCheckResult === 0) {
+        return 0;
+    }
+}
 
-export function numberChecker(userNumber, myNumber) {
-    if (userNumber > myNumber) {
+export function numberChecker(userNumber, randNumber) {
+    if (userNumber > randNumber) {
         return 1;
     }
-    else if (userNumber < myNumber) {
+    else if (userNumber < randNumber) {
         return -1;
     }
-    else if (userNumber.value === myNumber.value) {
+    else if (userNumber.value === randNumber.value) {
         return 0;
     }
     else return;
 } 
-
 
 export function results(numberChecker) {
     if (numberChecker === -1) {
@@ -31,7 +42,6 @@ export function results(numberChecker) {
         document.getElementById('submit').disabled = true;
     }
 }
-
 export function tryAttempt(tries) {
     if (tries === 0) {
         document.getElementById('submit').disabled = true;
@@ -47,11 +57,5 @@ export function youLoss(tries) {
     if (tries === 0) {
         lostNumber++;
         lossString.textContent = lostNumber;
-    }
-}
-
-export function resetGame(value) {
-    if (value === 0) {
-        document.getElementById('play-again').disabled = false;
     }
 }
