@@ -1,4 +1,9 @@
-const resultOne = document.getElementById('result-one');
+const result = document.getElementById('result');
+const wonString = document.getElementById('won');
+const lossString = document.getElementById('loss');
+
+let winNumber = 0;
+let lostNumber = 0;
 
 export function numberChecker(userNumber, myNumber) {
     if (userNumber > myNumber) {
@@ -16,19 +21,37 @@ export function numberChecker(userNumber, myNumber) {
 
 export function results(numberChecker) {
     if (numberChecker === -1) {
-        resultOne.textContent = 'Sorry but your guess is too low';
+        result.textContent = 'Sorry but your guess is too low';
     }
     else if (numberChecker === 1) {
-        resultOne.textContent = 'Sorry but your guess is too high';
+        result.textContent = 'Sorry but your guess is too high';
     }
     else if (numberChecker === 0) {
-        resultOne.textContent = 'Congrats you guessed right!!';
+        result.textContent = 'Congrats you guessed right!!';
+        document.getElementById('submit').disabled = true;
     }
 }
 
 export function tryAttempt(tries) {
     if (tries === 0) {
-        alert('Game Over!! You have run out of tries!');
-        document.getElementById('submit-one').disabled = true;
+        document.getElementById('submit').disabled = true;
+    }
+}
+export function youWon(numberChecker) {
+    if (numberChecker === 0) {
+        winNumber++;
+        wonString.textContent = winNumber;
+    }
+}
+export function youLoss(tries) {
+    if (tries === 0) {
+        lostNumber++;
+        lossString.textContent = lostNumber;
+    }
+}
+
+export function resetGame(value) {
+    if (value === 0) {
+        document.getElementById('play-again').disabled = false;
     }
 }
