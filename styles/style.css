@@ -83,6 +83,9 @@ header img {
 #submit-four {
     display: none;
 }
+#play-again {
+    display: none;
+}
 
 content {
     width: 80%;
