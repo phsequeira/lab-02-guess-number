@@ -1,3 +1,5 @@
+const resultOne = document.getElementById('result-one');
+
 export function numberChecker(userNumber, myNumber) {
     if (userNumber > myNumber) {
         console.log(myNumber);
@@ -18,17 +20,17 @@ export function numberChecker(userNumber, myNumber) {
 } 
 
 
-function results(numberChecker) {
-    if (numberChecker = -1) {
-        
-        //results.textContent = 'Sorry but your guess is too low';
+export function results(numberChecker) {
+    if (numberChecker === -1) {
+        console.log('tooo low');
+        resultOne.textContent = 'Sorry but your guess is too low';
     }
-    else if (numberChecker = 1) {
-        console.log('1');
-        //results.textContent = 'Sorry but your guess is too high';
+    else if (numberChecker === 1) {
+        console.log('too high');
+        resultOne.textContent = 'Sorry but your guess is too high';
     }
-    else {
-        console.log('00');
-        //results.textContent = 'Congrats you guessed right!!';
+    else if (numberChecker === 0) {
+        console.log('just right');
+        resultOne.textContent = 'Congrats you guessed right!!';
     }
 }
