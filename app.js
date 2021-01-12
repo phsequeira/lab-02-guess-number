@@ -1,5 +1,5 @@
 // import functions and grab DOM elements
-import { numberChecker, results } from './utils.js';
+import { numberChecker, results, tryAttempt } from './utils.js';
 const triesSpan = document.getElementById('tries');
 const guessOne = document.getElementById('guess-one');
 const buttonOne = document.getElementById('submit-one');
@@ -12,11 +12,9 @@ const randomNumber = Math.ceil(Math.random() * 20);
 buttonOne.addEventListener('click', () => {
 
     tries--;
-    
-
-    // fix this triesSpan.textContent = tries;
+    triesSpan.textContent = tries;
+    tryAttempt(tries);
     const numbCheckResult = numberChecker(guessOne.value, randomNumber);
-    console.log(numbCheckResult);
     results(numbCheckResult);
 });
 // set event listeners to update state and DOM
