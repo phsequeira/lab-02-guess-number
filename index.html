@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://images-na.ssl-images-amazon.com/images/I/61BRwWBPKfL.png">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
@@ -15,12 +16,12 @@
 <body>
     <header>
         <div class="gutter-right logo">
-            <img src="assets/big-logo.png"/>
+            <img src="https://images-na.ssl-images-amazon.com/images/I/61BRwWBPKfL.png" height= 50px />
         </div>
     </header>
     <main>
         <section class="main-section">
-            <img class="main-logo" src="assets/alchemy-logo.png"/>
+            <img class="main-logo" src="https://images-na.ssl-images-amazon.com/images/I/61BRwWBPKfL.png" height="100px"/>
             <h2>
                 Welcome to Number Guesser!
             </h2>
@@ -30,8 +31,24 @@
                 For this game you have to guess the correct number that is between 1 and 20! You have four chances to guess correctly or you loose. 
             </p>
             <hr />
-            
+        </section>
+        <section class="input">
+            <input id="guess-one" type="number" max="20" min="1">
+            <button id="submit-one">Guess!</button>
+            <p class="wrong-one"></p>
+            <input id="guess-two" type="hidden" max="20" min="1">
+            <button id="submit-two">Guess!</button>
+            <p class="wrong-two"></p>
+            <input id="guess-three" type="hidden" max="20" min="1">
+            <button id="submit-three">Guess!</button>
+            <p class="wrong-three"></p>
+            <input id="guess-four" type="hidden" max="20" min="1">
+            <button id="submit-four">Guess!</button>
+            <p class="wrong-four"></p>
 
+        </section>
+        <section>
+            <h2 class="win-loose">You haven't played yet!</h2>
         </section>
     </main>
     <footer>
