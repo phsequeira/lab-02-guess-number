@@ -1,23 +1,20 @@
 // import functions and grab DOM elements
+import { numberChecker } from './utils.js';
 const triesSpan = document.getElementById('tries');
 const guessOne = document.getElementById('guess-one');
 const buttonOne = document.getElementById('submit-one');
-const guessTwo = document.getElementById('guess-two');
-const buttonTwo = document.getElementById('submit-two');
-const guessThree = document.getElementById('guess-three');
-const buttonThree = document.getElementById('submit-three');
-const guessFour = document.getElementById('guess-four');
-const buttonFour = document.getElementById('submit-four');
-const wrongOne = document.getElementById('wrong-one');
-const wrongTwo = document.getElementById('wrong-two');
-const wrongThree = document.getElementById('wrong-three');
-const wrongFour = document.getElementById('wrong-four');
-const playAgain = document.getElementById('play-again');
+const resultOne = document.getElementById('result-one');
+//const playAgain = document.getElementById('play-again');
 
-let tries = 0;
-
+let tries = 4;
+const randomNumber = Math.ceil(Math.random() * 20);
 // initialize state
-buttonOne.addEventListener('click',  () => {
-    console.log('yes')
+buttonOne.addEventListener('click', () => {
+
+    tries--;
+    
+
+    // fix this triesSpan.textContent = tries;
+    numberChecker(guessOne.value, randomNumber);
 });
 // set event listeners to update state and DOM

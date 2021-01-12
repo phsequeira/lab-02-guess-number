@@ -74,15 +74,6 @@ header img {
     height: var(--header-height);
 }
 
-#submit-two {
-    display: none;
-}
-#submit-three {
-    display: none;
-}
-#submit-four {
-    display: none;
-}
 #play-again {
     display: none;
 }
